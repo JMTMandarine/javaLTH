@@ -1,16 +1,26 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        String[] name=new String[100] ;
-        String[] email=new String[100];
-        String[] password=new String[100];
-        String answer;
-        int index=0;
+        static Scanner in=new Scanner(System.in);
+        static String[] name=new String[100] ;
+        static String[] email=new String[100];
+        static String[] password=new String[100];
+        static String answer;
+        static  int index=0;
         
+        public static void main(String[] args) {
         
-        while(true) {
+        inputMember();
+        
+        printMember();
+        
+        in.close();
+        
+    }
+    
+    
+    static void inputMember() {
+            while(true) {
             
             System.out.println("이름을 입력해주세요 ㅎㅎ");
             name[index]=in.nextLine();
@@ -29,16 +39,16 @@ public class App {
             if(answer.toLowerCase().equals("n"))
                 break;            
         }
+        
+    }
+    
+    static void printMember() {
         for(int i=0;i<index;i++) {
             
             System.out.printf("%s %s %s\n"
                             ,name[i]
                             ,email[i]
                             ,password[i]);
-        }
-        
-        
-        
-        
+        } 
     }
 }
